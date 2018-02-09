@@ -1,0 +1,19 @@
+.TopBar {
+  height: 68px;
+  box-shadow: 0 8px 6px -6px #eee;
+  background-color: #fff;
+}
+
+.TopBar__logo {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  max-height: 50px;
+  margin: 8px;
+}
+
+.TopBar__title {
+  text-align: center;
+  color: #247ba0;
+  line-height: 68px;
+}
