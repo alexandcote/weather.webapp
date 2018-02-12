@@ -1,0 +1,8 @@
+.TileHeader {
+  width: 100%;
+  font-size: 25px;
+  line-height: 60px;
+  text-align: center;
+  background: #ddd;
+  flex: 0;
+}

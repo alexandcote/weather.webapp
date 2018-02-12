@@ -2,7 +2,6 @@
 import React from "react";
 
 import "./styles.css";
-import logo from "./logo.png";
 
 type Props = {
   name: string
@@ -10,7 +9,7 @@ type Props = {
 
 const TopBar = ({ name }: Props) => (
   <header className="TopBar">
-    <img className="TopBar__logo" src={logo} alt="Logo" />
+    <i className="TopBar__logo wu wu-black wu-64 wu-mostlycloudy" />
     <h1 className="TopBar__title">{name}</h1>
   </header>
 );

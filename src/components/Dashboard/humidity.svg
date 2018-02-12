@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="980px" height="980px" viewBox="0 0 980 980" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="humidity">
+                <path d="M657.4,612.5 C694.2,567.6 714.6,510.4 714.6,449.2 C714.6,302.2 596.2,183.8 449.2,183.8 C302.2,183.8 183.8,302.2 183.8,449.2 C183.8,510.4 204.2,567.6 241,612.5" id="Shape" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M449.2,387.9 C483,387.9 510.4,415.3 510.4,449.2 C510.4,483.1 483,510.4 449.2,510.4 C415.4,510.4 387.9,483 387.9,449.2 C387.9,415.4 415.3,387.9 449.2,387.9 Z" id="Shape" fill="#9F2C2C" fill-rule="nonzero"></path>
+                <polygon id="Shape" fill="#9F2C2C" fill-rule="nonzero" points="686 212.3 412.4 412.4 485.9 485.9"></polygon>
+                <path d="M592.1,808.5 C592.1,800.3 592.1,792.2 592.1,784 C551.3,804.4 502.3,816.7 449.2,816.7 C245,816.7 81.7,653.3 81.7,449.2 C81.7,245.1 245,81.7 449.2,81.7 C632.9,81.7 788.1,220.5 812.6,396.1 L816.7,392 L865.7,453.3 C873.9,461.5 882,473.7 898.4,494.1 C898.4,477.8 902.5,465.5 902.5,449.2 C902.4,200.1 702.3,0 453.3,0 C204.2,0 0,200.1 0,449.2 C0,698.3 200.1,898.4 449.2,898.4 C502.3,898.4 551.3,890.2 600.3,869.8 C596.2,853.4 592.1,833 592.1,808.5 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M816.7,490 C816.7,490 653.4,698.2 653.4,808.5 C653.4,902.4 726.9,980 816.7,980 C906.5,980 980,902.4 980,808.5 C980,698.2 816.7,490 816.7,490 Z" id="Shape" fill="#81B7D1" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

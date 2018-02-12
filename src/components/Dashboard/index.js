@@ -1,10 +1,18 @@
 // @flow
 import React, { Component } from "react";
 
-import Tile from "components/Tile";
+import TileContainer from "components/Tiles/Container";
+import Tile from "components/Tiles/Tile";
+import TileHeader from "components/Tiles/Header";
+import TileContent from "components/Tiles/Content";
+
+import Wind from "components/Dashboard/Wind";
+import Outside from "components/Dashboard/Outside";
+import Inside from "components/Dashboard/Inside";
+import Week from "components/Dashboard/Week";
 
 import { Station } from "types";
-import { toCelsius } from "utils";
+import { fahrenheitToCelsius, mphToKnots } from "utils";
 
 import "./styles.css";
 
@@ -15,56 +23,48 @@ type Props = {
 class Dashboard extends Component<Props> {
   render() {
     return (
-      <div className="Dashboard">
+      <TileContainer className="Dashboard">
         <Tile>
-          <h1>
-            Inside Temperature:
-            {toCelsius(this.props.station.current.inTemperature)}°C
-          </h1>
+          <TileHeader title="Wind" />
+          <TileContent full={true}>
+            <Wind
+              direction={this.props.station.current.windDirection}
+              speed={mphToKnots(this.props.station.current.windSpeed)}
+              avg={mphToKnots(this.props.station.current.tenMinWindSpeed)}
+            />
+          </TileContent>
         </Tile>
         <Tile>
-          <h1>
-            Outside Temperature:
-            {toCelsius(this.props.station.current.outTemperature)}°C
-          </h1>
+          <TileHeader title="Outside" />
+          <TileContent>
+            <Outside
+              temperature={fahrenheitToCelsius(
+                this.props.station.current.outTemperature
+              )}
+              humidity={this.props.station.current.outHumidity}
+              rain={this.props.station.current.rainRate}
+              icon="sun"
+            />
+          </TileContent>
         </Tile>
         <Tile>
-          <h1>
-            Inside Humidity:
-            {this.props.station.current.inHumidity}
-          </h1>
+          <TileHeader title="Inside" />
+          <TileContent>
+            <Inside
+              temperature={fahrenheitToCelsius(
+                this.props.station.current.inTemperature
+              )}
+              humidity={this.props.station.current.inHumidity}
+            />
+          </TileContent>
         </Tile>
         <Tile>
-          <h1>
-            Outside Humidity:
-            {this.props.station.current.outHumidity}
-          </h1>
+          <TileHeader title="Last Week" />
+          <TileContent>
+            <Week datas={this.props.station.datas} />
+          </TileContent>
         </Tile>
-        <Tile>
-          <h1>
-            Rain Rate:
-            {this.props.station.current.rainRate}
-          </h1>
-        </Tile>
-        <Tile>
-          <h1>
-            Ten Min Wind Speed:
-            {this.props.station.current.tenMinWindSpeed}
-          </h1>
-        </Tile>
-        <Tile>
-          <h1>
-            Wind Speed:
-            {this.props.station.current.windSpeed}
-          </h1>
-        </Tile>
-        <Tile>
-          <h1>
-            Wind Direction:
-            {this.props.station.current.windDirection}°
-          </h1>
-        </Tile>
-      </div>
+      </TileContainer>
     );
   }
 }

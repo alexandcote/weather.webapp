@@ -1,0 +1,31 @@
+.Wind {
+  position: relative;
+  height: 100%;
+}
+
+.Wind__header {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.Wind__header div {
+  margin: 20px;
+  font-size: 26px;
+}
+
+.Wind__header div:last-child {
+  text-align: right;
+}
+
+.Wind__header span {
+  display: block;
+  font-size: 12px;
+}
+
+.Wind__content {
+  height: 100%;
+}

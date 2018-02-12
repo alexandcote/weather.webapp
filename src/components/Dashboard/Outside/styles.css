@@ -1,0 +1,38 @@
+.Outside {
+  height: 100%;
+  background-color: #2a3539;
+  color: #ccc;
+}
+
+.Outside__top {
+  text-align: center;
+}
+
+.Outside img {
+  max-width: 108px;
+}
+
+.Outside__temperature--label {
+  font-size: 20px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.Outside__temperature--value {
+  font-size: 45px;
+}
+
+.Outside__bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px 16px;
+  text-align: center;
+}
+
+.Outside__humidity {
+  margin-top: 16px;
+}
+
+.Outside__humidity > .Outside__icon {
+  margin-bottom: 10px;
+}

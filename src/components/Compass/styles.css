@@ -1,0 +1,241 @@
+/**
+ * ReactCompass - a carefully crafted Compass component for React.
+ * https://github.com/virtyaluk/react-compass
+ *
+ * Copyright (c) 2016 Bohdan Shtepan
+ * http://modern-dev.com/
+ *
+ * Licensed under the MIT license.
+ */
+
+/*
+$accent-color: #81B7D1;
+$dark-color: #2a3539;
+*/
+.Compass {
+  margin: auto;
+  max-width: 520px;
+  max-height: 520px;
+  height: 80%;
+  width: 80%;
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.Compass__windrose {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #2a3539;
+  border: 12px solid #81b7d1;
+  position: relative;
+  box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.Compass__windrose:before,
+.Compass__windrose:after {
+  content: "";
+  position: absolute;
+  background-color: #81b7d1;
+}
+
+.Compass__windrose:before {
+  top: -16px;
+  left: calc(50% - 16px);
+  width: 26px;
+  height: 26px;
+  border-radius: 1000% 50% 0 50%;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.Compass__windrose:after {
+  top: -10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 12px;
+  z-index: 10;
+  border-radius: 15px 15px 0 0;
+}
+
+.Compass__mark,
+.Compass__mark--direction-h,
+.Compass__mark--direction-v {
+  width: 4px;
+  height: 100%;
+  left: calc(50% - 2px);
+  position: absolute;
+}
+
+.Compass__mark:before,
+.Compass__mark--direction-h:before,
+.Compass__mark--direction-v:before,
+.Compass__mark:after,
+.Compass__mark--direction-h:after,
+.Compass__mark--direction-v:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.Compass__mark:before,
+.Compass__mark--direction-h:before,
+.Compass__mark--direction-v:before {
+  top: 12%;
+}
+
+.Compass__mark:after,
+.Compass__mark--direction-h:after,
+.Compass__mark--direction-v:after {
+  bottom: 12%;
+}
+
+.Compass__mark--direction-h:before,
+.Compass__mark--direction-v:before,
+.Compass__mark--direction-h:after,
+.Compass__mark--direction-v:after {
+  width: auto;
+  height: auto;
+  font-size: 32px;
+  line-height: 32px;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.Compass__mark--direction-h:before,
+.Compass__mark--direction-v:before {
+  top: 8.5%;
+}
+
+.Compass__mark--direction-h:after,
+.Compass__mark--direction-v:after {
+  bottom: 8.5%;
+  transform: rotate(180deg);
+}
+
+.Compass__mark--direction-h:before {
+  content: "N";
+  left: -13px;
+  font-weight: 400;
+}
+
+.Compass__mark--direction-h:after {
+  content: "S";
+  left: -9px;
+}
+
+.Compass__mark--direction-v {
+  transform: rotate(90deg);
+}
+
+.Compass__mark--direction-v:before {
+  content: "E";
+  left: -11px;
+}
+
+.Compass__mark--direction-v:after {
+  content: "W";
+  left: -18px;
+}
+
+.Compass__mark:nth-child(1) {
+  transform: rotate(15deg);
+}
+
+.Compass__mark:nth-child(2) {
+  transform: rotate(30deg);
+}
+
+.Compass__mark:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+.Compass__mark:nth-child(4) {
+  transform: rotate(60deg);
+}
+
+.Compass__mark:nth-child(5) {
+  transform: rotate(75deg);
+}
+
+.Compass__mark:nth-child(6) {
+  transform: rotate(105deg);
+}
+
+.Compass__mark:nth-child(7) {
+  transform: rotate(120deg);
+}
+
+.Compass__mark:nth-child(8) {
+  transform: rotate(135deg);
+}
+
+.Compass__mark:nth-child(9) {
+  transform: rotate(150deg);
+}
+
+.Compass__mark:nth-child(10) {
+  transform: rotate(165deg);
+}
+
+.Compass__mark:nth-child(11) {
+  transform: rotate(180deg);
+}
+
+.Compass__arrow-container {
+  width: 48.07692%;
+  height: 48.07692%;
+  border-radius: 50%;
+  background-color: #20292e;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+}
+
+.Compass__arrow {
+  width: 71%;
+  height: 71%;
+  margin-left: 14.5%;
+  margin-top: 14.5%;
+  background-color: #81b7d1;
+  border-radius: 0 50% 50% 50%;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.Compass__labels {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  background-color: #81b7d1;
+  width: 57.6%;
+  height: 57.6%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-weight: 100;
+}

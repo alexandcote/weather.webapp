@@ -8,12 +8,18 @@
   text-align: left;
   position: absolute;
   top: 0;
-  max-height: 50px;
   margin: 8px;
 }
 
 .TopBar__title {
   text-align: center;
-  color: #247ba0;
+  color: #81b7d1;
+  font-size: 20px;
   line-height: 68px;
+}
+
+@media only screen and (min-width: 768px) {
+  .TopBar__title {
+    font-size: 26px;
+  }
 }

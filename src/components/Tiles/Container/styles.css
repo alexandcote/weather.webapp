@@ -1,0 +1,6 @@
+.TileContainer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 8px;
+  height: calc(100% - 68px);
+}

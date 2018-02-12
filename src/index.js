@@ -14,7 +14,10 @@ import App from "containers/App";
 import "./index.css";
 
 const client = new ApolloClient({
-  link: new HttpLink({ uri: `${process.env.REACT_APP_API_HOST}/graphql` }),
+  link: new HttpLink({
+    uri: `${process.env.REACT_APP_API_HOST ||
+      "https://api.meteosherbrooke.com"}/graphql`
+  }),
   cache: new InMemoryCache()
 });
 

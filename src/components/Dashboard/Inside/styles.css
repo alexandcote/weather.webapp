@@ -1,0 +1,29 @@
+.Inside {
+  height: 100%;
+  background-color: #2a3539;
+  color: #ccc;
+  padding: 16px;
+}
+
+.Inside__box {
+  text-align: center;
+  padding: 34px 0 10px;
+}
+
+.Inside__box-content {
+  margin-top: 20px;
+}
+
+.Inside__box-content--label {
+  font-size: 20px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.Inside__box-content--value {
+  font-size: 35px;
+}
+
+.Inside img {
+  width: 130px;
+}

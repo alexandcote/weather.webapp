@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
+import moment from "moment";
 
 import TopBar from "components/TopBar";
 import Dashboard from "components/Dashboard";
@@ -30,8 +31,10 @@ class App extends Component<Props> {
   }
 }
 
+const endTime = moment.utc();
+const startTime = moment(endTime).subtract(7, "d");
 const STATION_QUERY = gql`
-  query Station($station_id: ID!) {
+  query Station {
     station {
       name
       current {
@@ -44,13 +47,22 @@ const STATION_QUERY = gql`
         windDirection
         windSpeed
       }
+      datas(
+        time: {
+          startTime: "${startTime.format()}"
+          endTime: "${endTime.format()}"
+        }
+        groupBy: { method: MEAN, interval: HOUR }
+      ) {
+        time
+        outTemperature
+      }
     }
   }
 `;
 
 export default graphql(STATION_QUERY, {
   options: {
-    variables: { station_id: 4 },
     fetchPolicy: "cache-and-network"
   },
   props: ({ data: { error, loading, station } }) => ({
