@@ -12,22 +12,13 @@
 
 import React from "react";
 
+import { directionName } from "utils";
+
 import "./styles.css";
 
 type Props = {
   direction: number
 };
-
-export function directionName(dir: number): string {
-  const directionNames = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
-  const sections = directionNames.length;
-  const sect = 360 / sections;
-  let x = Math.floor((dir + sect / 2) / sect);
-
-  x = x >= sections ? 0 : x;
-
-  return directionNames[x];
-}
 
 const Compass = ({ direction }: Props) => {
   const name = directionName(direction);

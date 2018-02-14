@@ -6,11 +6,6 @@ it("renders without crashing", () => {
   const wrapper = shallow(<Compass direction={0} />);
 });
 
-it("return the correct direction name", () => {
-  const direction = 180;
-  expect(directionName(direction)).toEqual("S");
-});
-
 it("renders the correct direction", () => {
   const direction = 180;
   const directionName = (

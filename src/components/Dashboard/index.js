@@ -9,7 +9,7 @@ import TileContent from "components/Tiles/Content";
 import Wind from "components/Dashboard/Wind";
 import Outside from "components/Dashboard/Outside";
 import Inside from "components/Dashboard/Inside";
-import Week from "components/Dashboard/Week";
+import Overview from "components/Dashboard/Overview";
 
 import { Station } from "types";
 import { fahrenheitToCelsius, mphToKnots } from "utils";
@@ -59,9 +59,9 @@ class Dashboard extends Component<Props> {
           </TileContent>
         </Tile>
         <Tile>
-          <TileHeader title="Last Week" />
+          <TileHeader title="Overview" />
           <TileContent>
-            <Week datas={this.props.station.datas} />
+            <Overview datas={this.props.station.datas} />
           </TileContent>
         </Tile>
       </TileContainer>

@@ -32,7 +32,7 @@ export class App extends Component<Props> {
 }
 
 const endTime = moment.utc();
-const startTime = moment(endTime).subtract(7, "d");
+const startTime = moment(endTime).subtract(1, "w");
 const STATION_QUERY = gql`
   query Station {
     station {
@@ -55,7 +55,12 @@ const STATION_QUERY = gql`
         groupBy: { method: MEAN, interval: HOUR }
       ) {
         time
-        outTemperature
+        outTemperature,
+        outHumidity,
+        inTemperature,
+        inHumidity,
+        windSpeed,
+        windDirection
       }
     }
   }
