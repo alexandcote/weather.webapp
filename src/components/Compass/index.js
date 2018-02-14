@@ -18,9 +18,8 @@ type Props = {
   direction: number
 };
 
-const directionNames = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
-
-function directionName(dir: number): string {
+export function directionName(dir: number): string {
+  const directionNames = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   const sections = directionNames.length;
   const sect = 360 / sections;
   let x = Math.floor((dir + sect / 2) / sect);

@@ -4,8 +4,8 @@ import React from "react";
 import "./styles.css";
 
 type Props = {
-  full?: boolean,
-  children: any
+  children: any,
+  full?: boolean
 };
 
 const TileContent = ({ full, children }: Props) => (

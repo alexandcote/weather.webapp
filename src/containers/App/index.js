@@ -17,14 +17,14 @@ type Props = {
   station: Station
 };
 
-class App extends Component<Props> {
+export class App extends Component<Props> {
   render() {
     if (this.props.loading) return <h1>Loading...</h1>;
     if (this.props.error) return <h1>Error occurred</h1>;
 
     return (
       <div className="App">
-        <TopBar name={this.props.station.name} />
+        <TopBar stationName={this.props.station.name} />
         <Dashboard station={this.props.station} />
       </div>
     );
@@ -61,7 +61,7 @@ const STATION_QUERY = gql`
   }
 `;
 
-export default graphql(STATION_QUERY, {
+const AppWrapper = graphql(STATION_QUERY, {
   options: {
     fetchPolicy: "cache-and-network"
   },
@@ -71,3 +71,5 @@ export default graphql(STATION_QUERY, {
     station
   })
 })(App);
+
+export default AppWrapper;

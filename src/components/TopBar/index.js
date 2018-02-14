@@ -4,13 +4,13 @@ import React from "react";
 import "./styles.css";
 
 type Props = {
-  name: string
+  stationName: string
 };
 
-const TopBar = ({ name }: Props) => (
+const TopBar = ({ stationName }: Props) => (
   <header className="TopBar">
     <i className="TopBar__logo wu wu-black wu-64 wu-mostlycloudy" />
-    <h1 className="TopBar__title">{name}</h1>
+    <h1 className="TopBar__title">{stationName}</h1>
   </header>
 );
 
