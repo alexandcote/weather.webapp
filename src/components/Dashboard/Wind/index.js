@@ -24,7 +24,9 @@ const Wind = ({ direction, speed, avg }: Props) => (
       </div>
     </div>
     <div className="Wind__content">
-      <Compass direction={direction} />
+      <div className="Wind__content-square">
+        <Compass direction={direction} />
+      </div>
     </div>
   </div>
 );

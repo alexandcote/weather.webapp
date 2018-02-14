@@ -19,8 +19,6 @@ $dark-color: #2a3539;
   height: 80%;
   width: 80%;
   position: relative;
-  transform: translateY(-50%);
-  top: 50%;
 }
 
 .Compass__windrose {
