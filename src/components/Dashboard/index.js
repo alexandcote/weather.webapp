@@ -26,7 +26,7 @@ class Dashboard extends Component<Props> {
       <TileContainer className="Dashboard">
         <Tile>
           <TileHeader title="Wind" />
-          <TileContent full={true}>
+          <TileContent>
             <Wind
               direction={this.props.station.current.windDirection}
               speed={mphToKnots(this.props.station.current.windSpeed)}
